@@ -6,7 +6,6 @@ class Game:
         self.player_one = 'X'
         self.player_two = 'O'
         self.player_one_turn = True
-        self.player_two_turn = False
 
     def create_board(self):
         board = [['', '', ''],
@@ -47,10 +46,7 @@ class Game:
     def turn(self):
         if self.player_one_turn:
             self.player_one_turn = False
-            self.player_two_turn = True
             return self.player_one
 
         self.player_one_turn = True
-        self.player_two_turn = False
         return self.player_two
-
