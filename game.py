@@ -1,4 +1,3 @@
-from gui import Gui
 
 
 class Game:
@@ -23,23 +22,19 @@ class Game:
         # Checks rows for three across
         for row in range(len(board)):
             if board[row].count(player) == 3:
-                print('won')
                 self.winning_combination = (row, 0, row, 1, row, 2)
                 return True
         # Checks through columns for three down
         for i in range(0, len(board)):
             if board[0][i] == player and board[1][i] == player and board[2][i] == player:
-                print('won')
                 self.winning_combination = (0, i, 1, i, 2, i)
                 return True
         # checks for cross pattern from top left to bottom right
         if board[0][0] == player and board[1][1] == player and board[2][2] == player:
-            print('won')
             self.winning_combination = (0, 0, 1, 1, 2, 2)
             return True
         # checks for cross pattern from top right to bottom left
         elif board[0][2] == player and board[1][1] == player and board[2][0] == player:
-            print('won')
             self.winning_combination = (0, 2, 1, 1, 2, 0)
             return True
 
