@@ -25,13 +25,11 @@ class Gui(ctk.CTk):
     def create_buttons(self):
         for row in range(3):
             for col in range(3):
-                button = ctk.CTkButton(self, textvariable=self.buttons_text[row][col], font=(None, 50), height=100, width=100)
+                button = ctk.CTkButton(self, textvariable=self.buttons_text[row][col],
+                                       font=(None, 50), height=100, width=100)
                 button.grid(row=row, column=col, padx=self.padx, pady=self.pady, sticky='nsew')
                 self.buttons[row].append(button)
 
     def create_button_texts(self):
         for i in range(3):
             self.buttons_text.append([ctk.StringVar(value='') for x in range(3)])
-
-    def draw_message(self):
-        pass
